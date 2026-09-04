@@ -1,7 +1,8 @@
 from fastapi import APIRouter, HTTPException, status
 
-from app.models.comment import CommentCreate, CommentResponse
-from app.repositories import comment_repository, todo_repository
+from app.comment import comment_repository
+from app.comment.model import CommentCreate, CommentResponse
+from app.todo import todo_repository
 
 
 router = APIRouter()

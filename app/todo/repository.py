@@ -1,6 +1,6 @@
 from typing import Optional
 
-from app.models.todo import Todo
+from app.todo.model import Todo
 
 
 # Todo 저장소 관리 클래스

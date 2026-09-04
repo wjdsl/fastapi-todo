@@ -1,7 +1,7 @@
 from fastapi import APIRouter, status
 
-from app.models.todo_list import TodoListCreate, TodoListResponse
-from app.repositories import todo_list_repository
+from app.todo_list import todo_list_repository
+from app.todo_list.model import TodoListCreate, TodoListResponse
 
 
 router = APIRouter()

@@ -2,13 +2,10 @@ from datetime import datetime, timezone
 
 from fastapi import APIRouter, HTTPException, status
 
-from app.models.todo import TodoCreate, TodoResponse, TodoUpdate
-from app.repositories import (
-    tag_repository,
-    todo_list_repository,
-    todo_repository,
-    todo_tag_repository,
-)
+from app.tag import tag_repository
+from app.todo import todo_repository, todo_tag_repository
+from app.todo.model import TodoCreate, TodoResponse, TodoUpdate
+from app.todo_list import todo_list_repository
 
 
 router = APIRouter()

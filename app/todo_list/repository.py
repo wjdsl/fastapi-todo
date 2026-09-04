@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from app.models.todo_list import TodoList
+from app.todo_list.model import TodoList
 
 
 # Todo 리스트 저장소 관리 클래스

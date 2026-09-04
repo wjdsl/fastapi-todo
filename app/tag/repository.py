@@ -1,6 +1,6 @@
 from typing import Optional
 
-from app.models.tag import Tag
+from app.tag.model import Tag
 
 
 # Tag 저장소 관리 클래스

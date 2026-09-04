@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from app.models.comment import Comment
+from app.comment.model import Comment
 
 
 # Comment 저장소 관리 클래스

@@ -1,11 +1,8 @@
 from fastapi import APIRouter, HTTPException, status
 
-from app.models.tag import TagCreate, TagResponse
-from app.repositories import (
-    tag_repository,
-    todo_repository,
-    todo_tag_repository,
-)
+from app.tag import tag_repository
+from app.tag.model import TagCreate, TagResponse
+from app.todo import todo_repository, todo_tag_repository
 
 
 router = APIRouter()
