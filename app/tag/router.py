@@ -14,7 +14,7 @@ router = APIRouter()
     status_code=status.HTTP_201_CREATED,
 )
 def add_tag(todo_id: int, request: TagCreate):
-    if todo_id not in todo_repository.todos:
+    if not todo_repository.exists(todo_id):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Todo not found",
@@ -35,7 +35,7 @@ def add_tag(todo_id: int, request: TagCreate):
     response_model=list[TagResponse],
 )
 def get_tags(todo_id: int):
-    if todo_id not in todo_repository.todos:
+    if not todo_repository.exists(todo_id):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="Todo not found",
@@ -43,7 +43,4 @@ def get_tags(todo_id: int):
 
     tag_ids = todo_tag_repository.get_tag_ids(todo_id)
 
-    return [
-        tag_repository.tags[tag_id]
-        for tag_id in sorted(tag_ids)
-    ]
+    return tag_repository.find_by_ids(sorted(tag_ids))

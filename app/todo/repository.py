@@ -28,3 +28,6 @@ class TodoRepository:
         self.next_todo_id += 1
 
         return todo
+
+    def exists(self, todo_id: int) -> bool:
+        return todo_id in self.todos
