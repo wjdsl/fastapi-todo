@@ -20,3 +20,6 @@ class TodoListRepository:
         self.next_todo_list_id += 1
 
         return todo_list
+
+    def exists(self, todo_list_id: int) -> bool:
+        return todo_list_id in self.todo_lists
